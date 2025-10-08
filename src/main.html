@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>GDG Presents - Cardex</h1>
+    <div class="container">
+        <div class="left-panel">
+            <div class="card-container">
+                <div class="card">
+                    <div class="card__face card__face--front">
+                        <img id="card-image" width="300vw" src="../res/deck/back.png" alt="Card Front">
+                    </div>
+                    <div class="card__face card__face--back">
+                        <img id="card-image-back" width="300vw" src="../res/deck/back.png" alt="Card Back">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-panel">
+            <div class="question-container">
+                <p id="question">Choose a card</p>
+                <!-- Buttons for game flow, initially hidden via CSS -->
+                <button id="show-answer" class="game-button hidden">Show Answer</button>
+                <button id="continue-button" class="game-button hidden">Continue</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="suits">
+                <button class="suit" data-suit="h">♥</button>
+                <button class="suit" data-suit="d">♦</button>
+                <button class="suit" data-suit="c">♣</button>
+                <button class="suit" data-suit="s">♠</button>
+            </div>
+        </div>
+        <div class="bottom-panel">
+            <div class="ranks">
+                <button class="rank" data-rank="A">A</button>
+                <button class="rank" data-rank="2">2</button>
+                <button class="rank" data-rank="3">3</button>
+                <button class="rank" data-rank="4">4</button>
+                <button class="rank" data-rank="5">5</button>
+                <button class="rank" data-rank="6">6</button>
+                <button class="rank" data-rank="7">7</button>
+                <button class="rank" data-rank="8">8</button>
+                <button class="rank" data-rank="9">9</button>
+                <button class="rank" data-rank="10">10</button>
+                <button class="rank" data-rank="J">J</button>
+                <button class="rank" data-rank="Q">Q</button>
+                <button class="rank" data-rank="K">K</button>
+            </div>
+            <button id="confirm">Confirm</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
