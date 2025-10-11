@@ -36,9 +36,10 @@ h1 {
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 3fr 1fr;
+    /* Adjusted row proportions to make the middle panel shorter */
+    grid-template-rows: auto 2fr 1fr;
     height: 100%;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -100,15 +101,17 @@ h1 {
 
 .middle-panel {
     grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    /* Stretch to fill the remaining space on the right */
+    grid-column: 2 / 4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .question-container {
-    width: 80%;
-    height: 80%;
+    /* Make the container larger to fill the new space */
+    width: 90%;
+    height: 90%;
     background-color: #2a2a2a;
     border-radius: 10px;
     display: flex;
@@ -116,31 +119,31 @@ h1 {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
 #question {
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     color: var(--white);
 }
 
 .right-panel {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Move to the bottom row, next to the ranks */
+    /* This panel will now be part of the bottom-panel's flex layout */
+    /* We can hide it or remove its grid positioning */
+    display: none;
 }
 
 .suits {
     display: flex;
-    flex-direction: column;
+    /* The default flex-direction is 'row', so we can remove the column rule */
     gap: 10px;
 }
 
 .suit {
+    /* Adjust size to be consistent with rank buttons */
     width: 60px;
     height: 60px;
     font-size: 2em;
@@ -181,14 +184,13 @@ h1 {
 
 .bottom-panel {
     grid-row: 3 / 4;
-    grid-column: 1 / 4;
+    grid-column: 2 / 4;
     display: flex;
+    /* Stack the controls vertically */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* Pull the panel up to reduce the space above it */
-    margin-top: -10px;
 }
 
 .ranks {
@@ -271,4 +273,14 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+.question-side {
+    color: var(--acc-yellow);
+    font-weight: bold;
+}
+
+.answer-label {
+    color: var(--acc-green);
+    font-weight: bold;
 }
