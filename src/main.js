@@ -15,7 +15,7 @@ let questions = {};
 
 async function loadQuestions() {
     // popup that let's the user choose which question pack to load
-    const pack = window.prompt("Enter Question Pack Number (1-3): ");
+    const pack = window.prompt("Enter Question Pack Number (1-4): ");
     const path = '../res/questions/pack_' + pack + '.csv';
     const response = await fetch(path);
 
@@ -107,10 +107,11 @@ async function initializeGame() {
             const question = questions[currentCardId];
             if (Math.random() < 0.5) {
                 questionSide = 'A';
-                questionText.textContent = `A Side: ${question.A}`;
+                questionText.innerHTML = `<span class="question-side">A Side:</span><br>${question.A}`;
+
             } else {
                 questionSide = 'B';
-                questionText.textContent = `B Side: ${question.B}`;
+                questionText.innerHTML = `<span class="question-side">B Side:</span><br>${question.B}`;
             }
 
             // Update UI visibility
@@ -123,7 +124,7 @@ async function initializeGame() {
         // Construct the answer key ('AA' or 'BB') and display the answer
         const answerKey = questionSide + questionSide;
         const answer = questions[currentCardId][answerKey];
-        questionText.innerHTML += `<br><br><strong>Answer:</strong> ${answer}`;
+        questionText.innerHTML += `<br><br><span class="answer-label">Answer:</span><br>${answer}`;
 
         // Update UI visibility
         showAnswerButton.classList.add('hidden');
