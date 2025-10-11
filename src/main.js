@@ -14,7 +14,11 @@ const back = '../res/deck/back.png';
 let questions = {};
 
 async function loadQuestions() {
-    const response = await fetch('../res/questions.csv');
+    // popup that let's the user choose which question pack to load
+    const pack = window.prompt("Enter Question Pack Number (1-3): ");
+    const path = '../res/questions/pack_' + pack + '.csv';
+    const response = await fetch(path);
+
     const csvText = await response.text();
     const lines = csvText.trim().split('\n');
     const headers = lines.shift().split(',');
