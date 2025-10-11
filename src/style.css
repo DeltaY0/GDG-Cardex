@@ -29,14 +29,12 @@ h1 {
     text-align: center;
     color: var(--white);
     font-family: GoogleSans;
-    /* Reduce default browser margin to decrease space below the title */
     margin-bottom: 0;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    /* Adjusted row proportions to make the middle panel shorter */
     grid-template-rows: auto 2fr 1fr;
     height: 100%;
     gap: 10px;
@@ -50,7 +48,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Set up the 3D space for the card perspective effect */
     perspective: 1000px;
 }
 
@@ -63,18 +60,14 @@ h1 {
 }
 
 .card-container {
-    /* Apply the floating animation */
     animation: float 3s ease-in-out infinite;
-    /* Add a transition for smooth perspective changes */
     transition: transform 0.1s ease-out;
 }
 
 .card {
     position: relative;
     width: 300px;
-    /* Match image width */
     height: 420px;
-    /* Approximate height based on aspect ratio */
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -88,7 +81,6 @@ h1 {
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
     display: flex;
     justify-content: center;
@@ -101,7 +93,6 @@ h1 {
 
 .middle-panel {
     grid-row: 2 / 3;
-    /* Stretch to fill the remaining space on the right */
     grid-column: 2 / 4;
     display: flex;
     justify-content: center;
@@ -109,7 +100,6 @@ h1 {
 }
 
 .question-container {
-    /* Make the container larger to fill the new space */
     width: 90%;
     height: 90%;
     background-color: #2a2a2a;
@@ -130,20 +120,15 @@ h1 {
 }
 
 .right-panel {
-    /* Move to the bottom row, next to the ranks */
-    /* This panel will now be part of the bottom-panel's flex layout */
-    /* We can hide it or remove its grid positioning */
     display: none;
 }
 
 .suits {
     display: flex;
-    /* The default flex-direction is 'row', so we can remove the column rule */
     gap: 10px;
 }
 
 .suit {
-    /* Adjust size to be consistent with rank buttons */
     width: 60px;
     height: 60px;
     font-size: 2em;
@@ -164,7 +149,6 @@ h1 {
     transition-duration: 0.1s;
 }
 
-/* Keyframes for the floating animation */
 @keyframes float {
 
     0%,
@@ -186,7 +170,6 @@ h1 {
     grid-row: 3 / 4;
     grid-column: 2 / 4;
     display: flex;
-    /* Stack the controls vertically */
     flex-direction: column;
     justify-content: center;
     align-items: center;

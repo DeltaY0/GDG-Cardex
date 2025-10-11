@@ -103,10 +103,10 @@ async function initializeGame() {
             const question = questions[currentCardId];
             if (Math.random() < 0.5) {
                 questionSide = 'A';
-                questionText.innerHTML = `<span class="question-side">A Side:</span><br>${question.A}`;
+                questionText.textContent = `A Side: ${question.A}`;
             } else {
                 questionSide = 'B';
-                questionText.innerHTML = `<span class="question-side">B Side:</span><br>${question.B}`;
+                questionText.textContent = `B Side: ${question.B}`;
             }
 
             // Update UI visibility
@@ -119,7 +119,7 @@ async function initializeGame() {
         // Construct the answer key ('AA' or 'BB') and display the answer
         const answerKey = questionSide + questionSide;
         const answer = questions[currentCardId][answerKey];
-        questionText.innerHTML += `<br><br><span class="answer-label">Answer:</span><br>${answer}`;
+        questionText.innerHTML += `<br><br><strong>Answer:</strong> ${answer}`;
 
         // Update UI visibility
         showAnswerButton.classList.add('hidden');
