@@ -9,14 +9,14 @@ for (const suit of suits) {
     }
 }
 
-const back = '../res/deck/back.png';
+const back = 'res/deck/back.png';
 
 let questions = {};
 
 async function loadQuestions() {
     // popup that let's the user choose which question pack to load
     const pack = window.prompt("Enter Question Pack Number (1-4): ");
-    const path = '../res/questions/pack_' + pack + '.csv';
+    const path = 'res/questions/pack_' + pack + '.csv';
     const response = await fetch(path);
 
     const csvText = await response.text();
@@ -94,7 +94,7 @@ async function initializeGame() {
             currentCardId = selectedSuit + selectedRank;
             // Construct the image path based on the RANK_SUIT.png naming convention.
             // e.g., selectedRank='Q', selectedSuit='s' -> 'Q_s.png'
-            const imagePath = `../res/deck/${selectedRank}_${selectedSuit}.png`;
+            const imagePath = `res/deck/${selectedRank}_${selectedSuit}.png`;
 
             // Set the back of the card to the chosen card image *before* flipping
             cardImageBack.src = imagePath;
